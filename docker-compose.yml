@@ -1,0 +1,44 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.7"
+services:
+
+    mysql:
+        image: mysql:5.7
+        container_name: lab-mysql
+        working_dir: /application
+        command: --init-file /application/db/db.sql --character-set-server=utf8 --collation-server=utf8_general_ci --max_allowed_packet=1000000000 --net_buffer_length=1000000000
+        volumes:
+            - .:/application
+            - ./docker/lab-mysql/mysql:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - MYSQL_DATABASE=lab2
+            - MYSQL_USER=lab2
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        ports:
+            - "8082:3306"
+    
+    webserver:
+        build: ./docker/lab-webserver/
+        container_name: lab-webserver
+        hostname: lab-webserver
+        volumes:
+            - ./src:/var/www/html/lab
+        ports:
+            - "80:80"
+        depends_on:
+            - mysql
+        links:
+            - mysql
+
+    # smtp:
+    #     image: gessnerfl/fake-smtp-server
+    #     container_name: lab-smtp
+    #     working_dir: /application
+    #     volumes:
+    #         - ./smtp:/application
+    #     ports:
+    #         - "5080:5080"
+    #         - "5081:5081"
