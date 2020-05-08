@@ -4,7 +4,6 @@
 -- ------------------------------------------------------
 -- Server version	5.7.29-0ubuntu0.18.04.1
 
-DROP DATABASE   IF     EXISTS lab2;
 CREATE DATABASE IF NOT EXISTS lab2;
 USE lab2;
 
