@@ -2,3 +2,4 @@ docker/lab-mysql/mysql
 .env
 src/framework/view/portal/i18n/langcache
 src/upload
+db/data_backup/dump_conteudo_arquivo.sql
