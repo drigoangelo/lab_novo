@@ -172,7 +172,7 @@ class UtilAuthParent {
                 }
             }
         } catch (Exception $e) {
-            $this->setMsg("<p>Erro ao recuperar todas as ac&otilde;es.\nPor favor entre em contato com o suporte!</p><p>Erro:<br/>{$e->getMessage()}</p>");
+            //$this->setMsg("<p>Erro ao recuperar todas as ac&otilde;es.\nPor favor entre em contato com o suporte!</p><p>Erro:<br/>{$e->getMessage()}</p>");
             return false;
         }
         return $aAcoes;
