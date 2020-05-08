@@ -1,2 +1,3 @@
 docker/lab-mysql/mysql
 .env
+src/framework/view/portal/i18n/langcache
