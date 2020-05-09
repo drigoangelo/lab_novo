@@ -1,3 +1,8 @@
+# Definindo tamanho maximo dos arquivos a serem carregados em 1GB
+php_value upload_max_filesize 1000M
+php_value post_max_size 1001M
+
+
 RewriteEngine On 
 Options +SymLinksIfOwnerMatch  -Indexes
 RewriteRule ^\.htaccess$ - [F] 

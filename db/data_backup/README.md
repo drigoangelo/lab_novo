@@ -4,4 +4,8 @@ Este diretório contém os scripts de insert para inicialização do banco de da
 
 O arquivo `restore.sh` executa os scripts na ordem correta para evitar erros, por exemplo, com foreign keys.
 
-Antes de executar esse arquivo, alterar a senha do mysql no início do arquivo `SENHA="minhasenha"` substituindo `minhasenha` pela senha correta.
+Executar o seguinte comando no terminal:
+
+```
+docker exec lab-mysql bash /application/db/data_backup/executar.sh
+```

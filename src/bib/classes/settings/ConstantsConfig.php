@@ -13,13 +13,12 @@ class ConstantsConfig {
     private function defineConstantesLocal() {
         define("URL", Util::urlAutomatica(true));
 
-        define("CONFIG_HOST", 'localhost');
-        define("CONFIG_PORTA", '3306');
-        define("CONFIG_DBNAME", 'lab2');
-//        define("CONFIG_DBNAME", 'laboratoriovirtual_ufu_cliente');
-        define("CONFIG_USER", 'lab2');
-        define("CONFIG_PASSWORD", 'vBRHDoVdpUe6VTHNyyN9m8KL');
-        define("CONFIG_CHARSET", 'utf8');
+        define("CONFIG_HOST", $_ENV["MYSQL_HOST"]);
+        define("CONFIG_PORTA", $_ENV["MYSQL_PORT"]);
+        define("CONFIG_DBNAME", $_ENV["MYSQL_DATABASE"]);
+        define("CONFIG_USER", $_ENV["MYSQL_USER"]);
+        define("CONFIG_PASSWORD", $_ENV["MYSQL_PASSWORD"]);
+        define("CONFIG_CHARSET", $_ENV["MYSQL_CHARSET"]);
 
         # email
         define("EMAIL_USERNAME", "labvirtual@ileel.ufu.br");
@@ -42,13 +41,13 @@ class ConstantsConfig {
         define("CONFIG_CHARSET", 'utf8');
 
         # email
-	define("EMAIL_USERNAME", "labvirtual@ileel.ufu.br");
-	define("EMAIL_PASSWORD", "lab2018virtual");
+        define("EMAIL_USERNAME", "labvirtual@ileel.ufu.br");
+        define("EMAIL_PASSWORD", "lab2018virtual");
         define("EMAIL_CHARSET", "UTF-8");
         define("EMAIL_PORTA", "587");
-	define("EMAIL_CRIPTOGRAFIA", "tls");
+        define("EMAIL_CRIPTOGRAFIA", "tls");
 
-	define("SMTP_HOST", "smtp.ufu.br"); # se tiver
+        define("SMTP_HOST", "smtp.ufu.br"); # se tiver
         define("LOCAL_CAMERA", "/home/html/facialRecognitionLogin");
     }
 
